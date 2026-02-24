@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct PropertiesPanel: View {
     @Binding var selectedCueID: String?
@@ -111,7 +112,7 @@ struct AudioCueProperties: View {
             PropertyRow(label: "Name") {
                 TextField("Cue name", text: $cue.displayName)
                     .textFieldStyle(.roundedBorder)
-                    .onChange(of: cue.displayName) { _ in projectManager.markDirty() }
+                    .onChange(of: cue.displayName) { projectManager.markDirty() }
             }
 
             PropertyRow(label: "File") {
@@ -176,8 +177,8 @@ struct AudioCueProperties: View {
             PropertyRow(label: "In Point") {
                 HStack {
                     Slider(value: $cue.inPoint, in: 0...max(cue.duration, 0.001), step: 0.1)
-                        .onChange(of: cue.inPoint) { v in
-                            if v >= cue.outPoint { cue.inPoint = max(cue.outPoint - 0.1, 0) }
+                        .onChange(of: cue.inPoint) { _, newValue in
+                            if newValue >= cue.outPoint { cue.inPoint = max(cue.outPoint - 0.1, 0) }
                             projectManager.markDirty()
                         }
                     Text(cue.inPoint.formattedTime)
@@ -189,8 +190,8 @@ struct AudioCueProperties: View {
             PropertyRow(label: "Out Point") {
                 HStack {
                     Slider(value: $cue.outPoint, in: 0...max(cue.duration, 0.001), step: 0.1)
-                        .onChange(of: cue.outPoint) { v in
-                            if v <= cue.inPoint { cue.outPoint = min(cue.inPoint + 0.1, cue.duration) }
+                        .onChange(of: cue.outPoint) { _, newValue in
+                            if newValue <= cue.inPoint { cue.outPoint = min(cue.inPoint + 0.1, cue.duration) }
                             projectManager.markDirty()
                         }
                     Text(cue.outPoint.formattedTime)
@@ -217,7 +218,7 @@ struct AudioCueProperties: View {
                         .font(.system(size: 10))
                         .foregroundStyle(.secondary)
                     Slider(value: $cue.volume, in: 0...1.5)
-                        .onChange(of: cue.volume) { _ in projectManager.markDirty() }
+                        .onChange(of: cue.volume) { projectManager.markDirty() }
                     Image(systemName: "speaker.wave.3")
                         .font(.system(size: 10))
                         .foregroundStyle(.secondary)
@@ -230,7 +231,7 @@ struct AudioCueProperties: View {
             PropertyRow(label: "Fade In") {
                 HStack {
                     Slider(value: $cue.playFade, in: 0...10, step: 0.1)
-                        .onChange(of: cue.playFade) { _ in projectManager.markDirty() }
+                        .onChange(of: cue.playFade) { projectManager.markDirty() }
                     Text(cue.playFade > 0 ? "\(String(format: "%.1f", cue.playFade))s" : "Off")
                         .font(.system(size: 10).monospacedDigit())
                         .frame(width: 36, alignment: .trailing)
@@ -240,7 +241,7 @@ struct AudioCueProperties: View {
             PropertyRow(label: "Fade Out") {
                 HStack {
                     Slider(value: $cue.stopFade, in: 0...10, step: 0.1)
-                        .onChange(of: cue.stopFade) { _ in projectManager.markDirty() }
+                        .onChange(of: cue.stopFade) { projectManager.markDirty() }
                     Text(cue.stopFade > 0 ? "\(String(format: "%.1f", cue.stopFade))s" : "Off")
                         .font(.system(size: 10).monospacedDigit())
                         .frame(width: 36, alignment: .trailing)
@@ -250,7 +251,7 @@ struct AudioCueProperties: View {
             PropertyRow(label: "Stop Fade") {
                 HStack {
                     Slider(value: $cue.fadeOutDuration, in: 0...10, step: 0.1)
-                        .onChange(of: cue.fadeOutDuration) { _ in projectManager.markDirty() }
+                        .onChange(of: cue.fadeOutDuration) { projectManager.markDirty() }
                     Text("\(String(format: "%.1f", cue.fadeOutDuration))s")
                         .font(.system(size: 10).monospacedDigit())
                         .frame(width: 36, alignment: .trailing)
@@ -272,14 +273,14 @@ struct AudioCueProperties: View {
                 }
                 .labelsHidden()
                 .frame(maxWidth: .infinity)
-                .onChange(of: cue.duckingBehavior.mode) { _ in projectManager.markDirty() }
+                .onChange(of: cue.duckingBehavior.mode) { projectManager.markDirty() }
             }
 
             if cue.duckingBehavior.mode == .duckOthers {
                 PropertyRow(label: "Duck Level") {
                     HStack {
                         Slider(value: $cue.duckingBehavior.duckLevel, in: 0...1)
-                            .onChange(of: cue.duckingBehavior.duckLevel) { _ in projectManager.markDirty() }
+                            .onChange(of: cue.duckingBehavior.duckLevel) { projectManager.markDirty() }
                         Text(String(format: "%.0f%%", cue.duckingBehavior.duckLevel * 100))
                             .font(.system(size: 10).monospacedDigit())
                             .frame(width: 36, alignment: .trailing)
@@ -296,7 +297,7 @@ struct AudioCueProperties: View {
                 }
                 .labelsHidden()
                 .frame(maxWidth: .infinity)
-                .onChange(of: cue.endBehavior.action) { _ in projectManager.markDirty() }
+                .onChange(of: cue.endBehavior.action) { projectManager.markDirty() }
             }
 
             // Start Behavior
@@ -308,7 +309,7 @@ struct AudioCueProperties: View {
                 }
                 .labelsHidden()
                 .frame(maxWidth: .infinity)
-                .onChange(of: cue.startBehavior.action) { _ in projectManager.markDirty() }
+                .onChange(of: cue.startBehavior.action) { projectManager.markDirty() }
             }
         }
     }
@@ -322,7 +323,7 @@ struct AudioCueProperties: View {
                 .frame(minHeight: 60, maxHeight: 120)
                 .padding(4)
                 .background(Color(NSColor.textBackgroundColor), in: RoundedRectangle(cornerRadius: 4))
-                .onChange(of: cue.notes) { _ in projectManager.markDirty() }
+                .onChange(of: cue.notes) { projectManager.markDirty() }
         }
     }
 
@@ -332,7 +333,7 @@ struct AudioCueProperties: View {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
-        panel.allowedContentTypes = [.audio, .mp3, .wav, .aiff, .flac, .mpeg4Audio]
+        panel.allowedContentTypes = [.audio, .mp3, .wav, .aiff, UTType(filenameExtension: "flac") ?? .audio, .mpeg4Audio]
         panel.title = "Choose Audio File"
         if panel.runModal() == .OK, let url = panel.url {
             cue.mediaPath = url.path
@@ -368,7 +369,7 @@ struct GroupCueProperties: View {
             PropertyRow(label: "Name") {
                 TextField("Group name", text: $group.displayName)
                     .textFieldStyle(.roundedBorder)
-                    .onChange(of: group.displayName) { _ in projectManager.markDirty() }
+                    .onChange(of: group.displayName) { projectManager.markDirty() }
             }
             PropertyRow(label: "Color") {
                 LazyVGrid(columns: Array(repeating: .init(.fixed(18)), count: 6), spacing: 4) {
@@ -400,7 +401,7 @@ struct GroupCueProperties: View {
                 }
                 .labelsHidden()
                 .frame(maxWidth: .infinity)
-                .onChange(of: group.startBehavior.action) { _ in projectManager.markDirty() }
+                .onChange(of: group.startBehavior.action) { projectManager.markDirty() }
             }
             PropertyRow(label: "On End") {
                 Picker("", selection: $group.endBehavior.action) {
@@ -410,7 +411,7 @@ struct GroupCueProperties: View {
                 }
                 .labelsHidden()
                 .frame(maxWidth: .infinity)
-                .onChange(of: group.endBehavior.action) { _ in projectManager.markDirty() }
+                .onChange(of: group.endBehavior.action) { projectManager.markDirty() }
             }
         }
     }
@@ -422,7 +423,7 @@ struct GroupCueProperties: View {
                 .frame(minHeight: 60, maxHeight: 120)
                 .padding(4)
                 .background(Color(NSColor.textBackgroundColor), in: RoundedRectangle(cornerRadius: 4))
-                .onChange(of: group.notes) { _ in projectManager.markDirty() }
+                .onChange(of: group.notes) { projectManager.markDirty() }
         }
     }
 }

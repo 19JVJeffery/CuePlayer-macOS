@@ -344,6 +344,7 @@ struct GroupRow: View {
 // MARK: - Cart Assignment Helper
 
 enum CartAssignmentHelper {
+    @MainActor
     static func showPicker(cue: AudioCue, projectManager: ProjectManager) {
         // Show a simple alert asking for slot number
         let alert = NSAlert()
