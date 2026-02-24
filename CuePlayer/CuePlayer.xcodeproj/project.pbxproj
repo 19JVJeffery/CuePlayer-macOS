@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A84104FAEA264BECABAE7E51 /* CuePlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415FDB2BF8A446E88AD85ECA /* CuePlayerApp.swift */; };
+		F8785FA5DBE34134A7449B66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFCD3F63B6459FB56F428F /* ContentView.swift */; };
+		914B9F702D4A48F29615A7B2 /* CueModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D424FA3BCC624CB792934450 /* CueModels.swift */; };
+		3F55C300C55442E297D7455A /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70965148D9074C8391D2AB55 /* ProjectManager.swift */; };
+		E19CACA13E1E48A681B96618 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D544471DC69A4DB99C83DCFA /* AudioEngine.swift */; };
+		1C73B1DCBD96440A8917D156 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61FC824A7094B1FB440275D /* PlaylistView.swift */; };
+		53123B9A515B418DA2993179 /* ActiveCuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB16050ACF4BAAA4C73BD9 /* ActiveCuesView.swift */; };
+		F2C52983607B48A087D81E38 /* CartPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B739E40050644D119D7E7EEB /* CartPlayerView.swift */; };
+		65874E4CEFC042BDBEA1AD51 /* PropertiesPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030183E8A4E491C8B5FB529 /* PropertiesPanel.swift */; };
+		21665BD35C4C4BFE8BBA4225 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C694E2D11D741E39866DAEB /* WaveformView.swift */; };
+		4BDF0FE45DAF47A9B8E8DCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B7F012DAB147B5A7D24042 /* Assets.xcassets */; };
+		2C53558E429E48F0B061619E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 352E43BFF46E4A37BAE4A229 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		415FDB2BF8A446E88AD85ECA /* CuePlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuePlayerApp.swift; sourceTree = "<group>"; };
+		17AFCD3F63B6459FB56F428F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D424FA3BCC624CB792934450 /* CueModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CueModels.swift; sourceTree = "<group>"; };
+		70965148D9074C8391D2AB55 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
+		D544471DC69A4DB99C83DCFA /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		D61FC824A7094B1FB440275D /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		BFAB16050ACF4BAAA4C73BD9 /* ActiveCuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCuesView.swift; sourceTree = "<group>"; };
+		B739E40050644D119D7E7EEB /* CartPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPlayerView.swift; sourceTree = "<group>"; };
+		6030183E8A4E491C8B5FB529 /* PropertiesPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesPanel.swift; sourceTree = "<group>"; };
+		1C694E2D11D741E39866DAEB /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		58B7F012DAB147B5A7D24042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		352E43BFF46E4A37BAE4A229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AF7F29794E24BD7B8033A9C /* CuePlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CuePlayer.entitlements; sourceTree = "<group>"; };
+		681D37233FBD4500AFF99CE0 /* CuePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD924F5B39D1444F8E7D6EC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE6BFCA7F1A54795B601D31F = {
+			isa = PBXGroup;
+			children = (
+				718F08F394154B9988495F21 /* CuePlayer */,
+				B3E5C21CE81149A18BF68CC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3E5C21CE81149A18BF68CC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				681D37233FBD4500AFF99CE0 /* CuePlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27DC13A6C5BF46A586852AF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D424FA3BCC624CB792934450 /* CueModels.swift */,
+				70965148D9074C8391D2AB55 /* ProjectManager.swift */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20D0533506FE4B1DBC8B76A3 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D544471DC69A4DB99C83DCFA /* AudioEngine.swift */,
+			);
+			name = Audio;
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		148E889CF04742C587B12E90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D61FC824A7094B1FB440275D /* PlaylistView.swift */,
+				BFAB16050ACF4BAAA4C73BD9 /* ActiveCuesView.swift */,
+				B739E40050644D119D7E7EEB /* CartPlayerView.swift */,
+				6030183E8A4E491C8B5FB529 /* PropertiesPanel.swift */,
+				1C694E2D11D741E39866DAEB /* WaveformView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		718F08F394154B9988495F21 /* CuePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				415FDB2BF8A446E88AD85ECA /* CuePlayerApp.swift */,
+				17AFCD3F63B6459FB56F428F /* ContentView.swift */,
+				27DC13A6C5BF46A586852AF3 /* Models */,
+				20D0533506FE4B1DBC8B76A3 /* Audio */,
+				148E889CF04742C587B12E90 /* Views */,
+				58B7F012DAB147B5A7D24042 /* Assets.xcassets */,
+				352E43BFF46E4A37BAE4A229 /* Info.plist */,
+				8AF7F29794E24BD7B8033A9C /* CuePlayer.entitlements */,
+			);
+			path = CuePlayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2E9EF7C18F24E9DA96BE8A1 /* CuePlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C289758DD73644E487E4F50A;
+			buildPhases = (
+				5378D8149D8F44F1A8E95814 /* Sources */,
+				AD924F5B39D1444F8E7D6EC0 /* Frameworks */,
+				514DB1CF0E254FD1A1D44813 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CuePlayer;
+			productName = CuePlayer;
+			productReference = 681D37233FBD4500AFF99CE0;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92F060A1AA254D7295EC54C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F2E9EF7C18F24E9DA96BE8A1 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = F3AF26A9082A42E3B1250E61;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE6BFCA7F1A54795B601D31F;
+			productRefGroup = B3E5C21CE81149A18BF68CC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2E9EF7C18F24E9DA96BE8A1 /* CuePlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		514DB1CF0E254FD1A1D44813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDF0FE45DAF47A9B8E8DCDA /* Assets.xcassets in Resources */,
+				2C53558E429E48F0B061619E /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5378D8149D8F44F1A8E95814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A84104FAEA264BECABAE7E51 /* CuePlayerApp.swift in Sources */,
+				F8785FA5DBE34134A7449B66 /* ContentView.swift in Sources */,
+				914B9F702D4A48F29615A7B2 /* CueModels.swift in Sources */,
+				3F55C300C55442E297D7455A /* ProjectManager.swift in Sources */,
+				E19CACA13E1E48A681B96618 /* AudioEngine.swift in Sources */,
+				1C73B1DCBD96440A8917D156 /* PlaylistView.swift in Sources */,
+				53123B9A515B418DA2993179 /* ActiveCuesView.swift in Sources */,
+				F2C52983607B48A087D81E38 /* CartPlayerView.swift in Sources */,
+				65874E4CEFC042BDBEA1AD51 /* PropertiesPanel.swift in Sources */,
+				21665BD35C4C4BFE8BBA4225 /* WaveformView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16E22718E7894AAFA167AED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		364B11D3BE6E49D2A1AE83C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01EB8B76367D43B7992838E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CuePlayer/CuePlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CuePlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cueplayer.CuePlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2BD1A74443AD43249E9E613A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CuePlayer/CuePlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CuePlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cueplayer.CuePlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3AF26A9082A42E3B1250E61 /* Build configuration list for PBXProject "CuePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16E22718E7894AAFA167AED6 /* Debug */,
+				364B11D3BE6E49D2A1AE83C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C289758DD73644E487E4F50A /* Build configuration list for PBXNativeTarget "CuePlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01EB8B76367D43B7992838E5 /* Debug */,
+				2BD1A74443AD43249E9E613A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 92F060A1AA254D7295EC54C4 /* Project object */;
+}
