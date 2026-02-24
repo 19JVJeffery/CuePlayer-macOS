@@ -51,7 +51,7 @@ struct ContentView: View {
         } label: {
             HStack(spacing: 4) {
                 Image(systemName: "theatermasks")
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
                 Text(projectManager.project.name)
                     .font(.headline)
                 if projectManager.isDirty {
@@ -68,7 +68,7 @@ struct ContentView: View {
     private var masterVolumeControl: some View {
         HStack(spacing: 4) {
             Image(systemName: audioEngine.masterVolume > 0 ? "speaker.wave.2" : "speaker.slash")
-                .foregroundStyle(audioEngine.masterVolume > 0 ? .primary : .red)
+                .foregroundStyle(audioEngine.masterVolume > 0 ? Color.primary : Color.red)
                 .font(.system(size: 12))
             Slider(value: $audioEngine.masterVolume, in: 0...1)
                 .frame(width: 80)
@@ -140,9 +140,7 @@ struct ProjectSettingsSheet: View {
                 TextField("Show Name", text: $projectManager.project.name)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 200)
-                    .onChange(of: projectManager.project.name) { _ in
-                        projectManager.markDirty()
-                    }
+                    .onChange(of: projectManager.project.name) { projectManager.markDirty() }
             }
 
             LabeledContent("Theme") {
@@ -152,9 +150,7 @@ struct ProjectSettingsSheet: View {
                 }
                 .pickerStyle(.segmented)
                 .frame(width: 160)
-                .onChange(of: projectManager.project.theme.mode) { _ in
-                    projectManager.markDirty()
-                }
+                .onChange(of: projectManager.project.theme.mode) { projectManager.markDirty() }
             }
 
             LabeledContent("Accent Color") {

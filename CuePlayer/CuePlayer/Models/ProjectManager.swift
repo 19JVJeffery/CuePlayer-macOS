@@ -1,6 +1,7 @@
 import Foundation
 import AppKit
 import AVFoundation
+import UniformTypeIdentifiers
 
 // MARK: - Project Model
 
@@ -235,7 +236,7 @@ final class ProjectManager: ObservableObject {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = true
         panel.canChooseDirectories = false
-        panel.allowedContentTypes = [.audio, .mp3, .wav, .aiff, .flac, .mpeg4Audio]
+        panel.allowedContentTypes = [.audio, .mp3, .wav, .aiff, UTType(filenameExtension: "flac") ?? .audio, .mpeg4Audio]
         panel.title = "Import Audio Files"
 
         if panel.runModal() == .OK {
